@@ -1,16 +1,73 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    color: #f3fc16;
+}
+header, .footer {
+    background: rgba(12, 12, 11, 0.5);
 }
 
+body {
+    background: rgb(63,76,251);
+    background: radial-gradient(circle, rgba(63,76,251,1) 0%, rgba(70,248,252,1) 100%);
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    margin-bottom: 60px;
+}
+.result {
+    margin-top: 1.5em;
+}
+
+.principal {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    margin: 1.5rem;
+}
+.home-link {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+.navbar a, .custom a {
+    padding: 0.5rem;
+}
+
+    .navbar a:hover, .container a:hover {
+        color: #f3fc16;
+        text-decoration: none;
+    }
+
+.note-cell {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 25vw;
+}
+
+.light {
+    color: #ffffff;
+}
+.table {
+    color: #ffffff;
+}
+
+th, td {
+    text-align: center;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: black;
+    color: #ffffff;
+}
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #1861ac;
 }
+
 
 .btn-primary {
   color: #fff;
@@ -58,14 +115,14 @@ html {
   min-height: 100%;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
+
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+a{
+    color:antiquewhite;
 }

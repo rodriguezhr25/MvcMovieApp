@@ -25,7 +25,8 @@ namespace MvcMovie.Models
                     {
                         Title = "Home Teachers",
                         ReleaseDate = DateTime.Parse("1989-2-12"),
-                        Genre = "Comedy",
+                        Genre = "1",
+                        Rating = "G",
                         Price = 7.99M
                     },
 
@@ -33,15 +34,17 @@ namespace MvcMovie.Models
                     {
                         Title = "The Other Side of Heaven ",
                         ReleaseDate = DateTime.Parse("2002-3-13"),
-                        Genre = "Romantic Drama",
+                        Genre = "2",
+                        Rating = "G",
                         Price = 8.99M
                     },
 
                     new Movie
                     {
-                        Title = "The Resoration",
+                        Title = "The Restoration",
                         ReleaseDate = DateTime.Parse("1986-2-23"),
-                        Genre = "Documental",
+                        Genre = "3",
+                        Rating = "G",
                         Price = 9.99M
                     },
 
@@ -49,11 +52,52 @@ namespace MvcMovie.Models
                     {
                         Title = "Charly",
                         ReleaseDate = DateTime.Parse("1959-4-15"),
-                        Genre = "Romantic Comedy",
+                        Genre = "3",
+                        Rating = "PG",
                         Price = 3.99M
                     }
                 );
                 context.SaveChanges();
+            }
+            using (var contextGenres = new MvcMovieContext(
+              serviceProvider.GetRequiredService<
+                  DbContextOptions<MvcMovieContext>>()))
+            {
+                // Look for any movies.
+                if (contextGenres.Genre.Any())
+                {
+                    return;   // DB has been seeded
+                }
+
+                contextGenres.Genre.AddRange(
+                    new Genre
+                    {
+                        GenreName = "Comedy",
+                     
+                    },
+
+                    new Genre
+                    {
+                        GenreName = "Drama",
+
+                    },
+                     new Genre
+                     {
+                         GenreName = "Romantic",
+
+                     },
+                      new Genre
+                      {
+                          GenreName = "Documental",
+
+                      },
+                       new Genre
+                       {
+                           GenreName = "Romantic Comedy",
+
+                       }
+                );
+                contextGenres.SaveChanges();
             }
         }
     }
